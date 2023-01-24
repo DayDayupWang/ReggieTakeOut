@@ -1,13 +1,16 @@
 package com.example.reggie.common;
 
 import lombok.Data;
+
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 @Data
-public class R<T> {
+public class R<T> implements Serializable {
     /**
      * 通用的返回结果类，服务端相应数据最终都会封装成此对象
+     * 加入序列化接口用于redis
      */
     private Integer code; //编码：1成功，0和其它数字为失败
 
